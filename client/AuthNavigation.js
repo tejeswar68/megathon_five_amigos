@@ -1,8 +1,8 @@
 import { View, Text } from 'react-native'
 import React, { useEffect, useState } from 'react'
-import { SignedInStack, SignedOutStack } from './screens/navigation'
-import { auth } from './firebase';
-import { onAuthStateChanged } from "firebase/auth";
+import { SignedInStack,SignedOutStack } from './navigation';
+// import { auth } from './firebase';
+// import { onAuthStateChanged } from "firebase/auth";
 
 
 const AuthNavigation = () => {
