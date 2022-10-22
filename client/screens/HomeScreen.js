@@ -4,7 +4,8 @@ import { auth } from '../firebase'
 import { signOut } from 'firebase/auth';
 import Humanscreen from './HumanScreen';
 import VetScreen from './VetScreen';
-const HomeScreen = () => {
+
+const HomeScreen = ({navigation}) => {
 
     const handleSignOut = async () => {
       await signOut(auth).then(() => {
@@ -20,6 +21,9 @@ const HomeScreen = () => {
       <Text>HomeScreen</Text>
       <TouchableOpacity onPressOut={handleSignOut}>
         <Text>SignOut</Text>
+      </TouchableOpacity>
+      <TouchableOpacity onPressOut={()=>{navigation.push('profileScreen')}}>
+        <Text>Profile</Text>
       </TouchableOpacity>
     </View>
     <View style={styles.container}>
@@ -38,13 +42,18 @@ const HomeScreen = () => {
     <View style={styles.smallbox}>
       <View style={{...styles.inner,backgroundColor:'orange'}}>
         <Text style={{color:'white',fontSize:20}}>VETERNARY</Text>
-        
+        <TouchableOpacity onPressOut={()=>{navigation.push('VetScreen')}}>
+        <Text>navvv</Text>
+      </TouchableOpacity>
       </View>
   
     </View>
     <View style={styles.smallbox}>
       <View style={{...styles.inner,backgroundColor:'lightgreen'}}>
         <Text style={{color:'white',fontSize:20}}>HUMAN</Text>
+        <TouchableOpacity onPressOut={()=>{navigation.push('HumanScreen')}}>
+        <Text>navvv</Text>
+      </TouchableOpacity>
       </View>
   
     </View>
