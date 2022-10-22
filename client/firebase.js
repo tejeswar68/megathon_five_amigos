@@ -7,12 +7,12 @@ import { getAuth } from 'firebase/auth'
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyARIphgigEJ2THIGv2HW2OrLSy01H711lk",
-    authDomain: "rn-instacgram.firebaseapp.com",
-    projectId: "rn-instacgram",
-    storageBucket: "rn-instacgram.appspot.com",
-    messagingSenderId: "695846279640",
-    appId: "1:695846279640:web:63fd9bc3bce5c9a1387aad"
+    apiKey: "AIzaSyDr3VceoaP8W6jXc5xs7V6n94_8vMEaRu8",
+    authDomain: "megathon5555.firebaseapp.com",
+    projectId: "megathon5555",
+    storageBucket: "megathon5555.appspot.com",
+    messagingSenderId: "342282018151",
+    appId: "1:342282018151:web:6d90ed86ef97456a7ba3c2"
 };
 
 // Initialize Firebase

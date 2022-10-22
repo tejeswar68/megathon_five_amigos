@@ -7,7 +7,7 @@ import { onAuthStateChanged } from "firebase/auth";
 
 const AuthNavigation = () => {
 
-    const [currentUser, setCurrentUser] = useState(true);
+    const [currentUser, setCurrentUser] = useState(false);
 
     // const userHandler = (user) => {
     //     user ? setCurrentUser(user) : setCurrentUser(null);
