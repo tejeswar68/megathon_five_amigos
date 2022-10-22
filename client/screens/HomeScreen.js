@@ -1,8 +1,9 @@
 import { StyleSheet, Text, TouchableOpacity, View,StatusBar } from 'react-native'
 import React from 'react'
 import { auth } from '../firebase'
-import { signOut } from 'firebase/auth'
-
+import { signOut } from 'firebase/auth';
+import Humanscreen from './HumanScreen';
+import VetScreen from './VetScreen';
 const HomeScreen = () => {
 
     const handleSignOut = async () => {
@@ -47,8 +48,11 @@ const HomeScreen = () => {
       </View>
   
     </View>
+ 
       <StatusBar style="auto" />
     </View>
+    
+    
     </>
   )
 }
