@@ -5,10 +5,13 @@ import {
   Text,
   View,
   Image,
+  StatusBar,
+  Platform,
 } from 'react-native';
+import BottomTabs from '../components/homeScreen/BottomTabs';
 import { auth, db } from '../firebase';
 
-const ProfileScreen = () => {
+const ProfileScreen = ({ navigation }) => {
   const [currentUser, setCurrentUser] = useState({});
   useEffect(() => {
     onSnapshot(doc(db, "users", auth.currentUser.email), (doc) => {
@@ -30,6 +33,7 @@ const ProfileScreen = () => {
 
         </View>
       </View>
+      <BottomTabs navigation={navigation} currentUser={currentUser} />
     </View>
   );
 
@@ -39,6 +43,10 @@ const styles = StyleSheet.create({
   header: {
     backgroundColor: "#DCDCDC",
     width: 390,
+  },
+  container: {
+    flex: 1,
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
   headerContent: {
     padding: 30,

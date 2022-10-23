@@ -76,7 +76,7 @@ const HomeScreen = ({ navigation }) => {
 
               <FontAwesome5 name={'stethoscope'} size={30} color="white" style={{ marginTop: 10 }} />
               <Text style={{ color: 'white', fontSize: 30 }}>BOOK AN APPOINTMENT</Text>
-              <TouchableOpacity onPressOut={() => { navigation.push('AppointmentScreen') }}>
+              <TouchableOpacity onPressOut={() => { navigation.push('AppointmentScreen', { paramKey: currentUser }) }}>
                 <FontAwesome5 name={'arrow-right'} size={30} color="white" style={{ marginTop: 10 }} />
               </TouchableOpacity>
             </View>

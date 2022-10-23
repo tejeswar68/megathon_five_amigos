@@ -1,11 +1,16 @@
 import { View, TouchableOpacity, Image, StyleSheet } from 'react-native'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useRoute } from '@react-navigation/native';
 
 
 
 const BottomTabs = ({ currentUser, navigation }) => {
+    const route = useRoute();
 
     const [activeTab, setActiveTab] = useState('HomeScreen')
+    useEffect(() => {
+        setActiveTab(route.name);
+    })
 
     const icons = [
         {
@@ -67,7 +72,6 @@ const styles = StyleSheet.create({
         paddingTop: 10,
         borderTopWidth: 2,
         borderTopColor: "#8F00FF",
-        marginLeft:5,
     },
     icon: {
         width: 30,
