@@ -15,24 +15,24 @@ const BottomTabs = ({ currentUser, navigation }) => {
     const icons = [
         {
             name: 'HomeScreen',
-            active: "https://img.icons8.com/fluency-systems-filled/144/8F00FF/home.png",
-            inactive: 'https://img.icons8.com/fluency-systems-regular/48/8F00FF/home.png'
+            active: "https://img.icons8.com/fluency-systems-filled/144/000000/home.png",
+            inactive: 'https://img.icons8.com/fluency-systems-regular/48/000000/home.png'
         },
         {
             name: 'Search',
-            active: "https://img.icons8.com/fluency-systems-filled/144/8F00FF/search.png",
-            inactive: 'https://img.icons8.com/fluency-systems-regular/48/8F00FF/search--v1.png'
+            active: "https://img.icons8.com/fluency-systems-filled/144/000000/search.png",
+            inactive: 'https://img.icons8.com/fluency-systems-regular/48/000000/search--v1.png'
 
         },
         {
-            name: 'sosScreen',
-            active: "https://img.icons8.com/external-tanah-basah-glyph-tanah-basah/48/8F00FF/external-sos-healthcare-tanah-basah-glyph-tanah-basah-2.png",
-            inactive: 'https://img.icons8.com/external-tanah-basah-basic-outline-tanah-basah/24/8F00FF/external-sos-healthcare-tanah-basah-basic-outline-tanah-basah.png'
+            name: 'SosScreen',
+            active: "https://as2.ftcdn.net/v2/jpg/02/75/63/71/1000_F_275637194_3QdpxTf9d2HuezQHmoLJPajDoXPf9DX3.jpg",
+            inactive: 'https://as2.ftcdn.net/v2/jpg/02/75/63/71/1000_F_275637194_3QdpxTf9d2HuezQHmoLJPajDoXPf9DX3.jpg'
         },
         {
-            name: 'mapScreen',
-            active: "https://img.icons8.com/ios-filled/50/8F00FF/marker.png",
-            inactive: 'https://img.icons8.com/ios/50/8F00FF/marker--v1.png'
+            name: 'MapScreen',
+            active: "https://img.icons8.com/ios-filled/50/000000/marker.png",
+            inactive: 'https://img.icons8.com/ios/50/000000/marker--v1.png'
         },
         {
             name: 'profileScreen',
@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
         height: 50,
         paddingTop: 10,
         borderTopWidth: 2,
-        borderTopColor: "#8F00FF",
+        borderTopColor: "black",
     },
     icon: {
         width: 30,
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
     profilePic: (activeTab = '') => ({
         borderRadius: 50,
         borderWidth: activeTab === 'profileScreen' ? 2 : 0,
-        borderColor: '#8F00FF',
+        borderColor: '#000000',
     })
 })
 

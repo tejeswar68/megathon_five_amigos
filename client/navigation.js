@@ -10,6 +10,8 @@ import ProfileScreen from './screens/profileScreen'
 import AppointmentScreen from './screens/AppointmentScreen'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
+import SosScreen from './screens/SosScreen'
+import MapScreen from './screens/MapScreen'
 import { View } from 'react-native'
 import { auth } from './firebase'
 import { signOut } from 'firebase/auth';
@@ -66,7 +68,7 @@ export const SignedInStack = () => (
                 
             }} component={HumanScreen} />
             <Stack.Screen name='VetScreen' options={{
-                title: "VETERNARY FIRST AID INFO",
+                title: "Veternary First-Aid",
                 headerBackTitle: "Back to login",
                 headerTitleStyle:{
                     color:"black",
@@ -90,6 +92,22 @@ export const SignedInStack = () => (
                 },
                 headerTitleAlign: "left"
             }} component={AppointmentScreen} />
+            <Stack.Screen name='MapScreen' options={{
+                title: "NearByHosptials",
+                headerTitleStyle:{
+                    color:"black",
+                    fontSize: 20,
+                },
+                headerTitleAlign: "left"
+            }} component={MapScreen} />
+            <Stack.Screen name='SosScreen' options={{
+                title: "SOS-Emergency!!",
+                headerTitleStyle:{
+                    color:"black",
+                    fontSize: 20,
+                },
+                headerTitleAlign: "left"
+            }} component={SosScreen} />
         </Stack.Navigator>
     </NavigationContainer>
 )
@@ -100,8 +118,8 @@ export const SignedOutStack = () => (
             initialRouteName='LoginScreen'
             screenOptions={screenOptions}
         >
-            <Stack.Screen name='Login' component={LoginScreen}  />
-            <Stack.Screen name='SignupScreen' component={SignupScreen} />
+            <Stack.Screen name='LoginScreen'  component={LoginScreen} options={{title:'Login'}} />
+            <Stack.Screen name='SignupScreen' component={SignupScreen} options={{title:'Signup'}} />
         </Stack.Navigator>
     </NavigationContainer>
 )

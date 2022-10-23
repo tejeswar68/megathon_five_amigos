@@ -4,41 +4,58 @@ import {  Card, Title, Paragraph } from 'react-native-paper'
 
 const VetScreen = () => {
   return (
+
     <ScrollView showsVerticalScrollIndicator={false}>
-      <View>
-      <Title>Veternary First Aid  for Animals: </Title>
-      <Card style={styles.card}> 
-              <Card.Content>
-                  <Title>Suggested items for a livestock first aid kit:</Title>
+    <View>
+   <Card style={styles.card}>
+    {/* <Card.Title title="Card Title" subtitle="Card Subtitle"  /> */}
+      <Card.Content>
+      <Card.Cover style={{...styles.img,borderRadius:20}} source={{ uri: 'https://www.strawindia.org/images/first-aid-for-animals.jpg' }} />
+        <Title style={{textAlign:'center'}}>Suggested items for a livestock first aid kit: </Title>
                   <Paragraph>Skin Cleanser</Paragraph>
                   <Paragraph>Water Soluble Ointment</Paragraph>
                   <Paragraph>Scissors & Flashlight</Paragraph>
                   <Paragraph>Cotton & Thermometer</Paragraph>
                   <Paragraph>Fly repellent</Paragraph>
-              </Card.Content>
-              <Card.Cover style={styles.img} source={{ uri: 'https://www.strawindia.org/images/first-aid-for-animals.jpg' }} />
-          </Card>
+      </Card.Content>
+      <Card.Actions>
+      </Card.Actions>
+    </Card>
 
-        <Card style={styles.card}> 
-              <Card.Content>
-                  <Title>In case of accidents: </Title>
-                  <Paragraph>Place the animal in a cool, well ventilated place or a shaded area.</Paragraph>
+    <Card style={styles.card}>
+    {/* <Card.Title title="Card Title" subtitle="Card Subtitle"  /> */}
+      <Card.Content>
+      <Card.Cover style={{...styles.img,borderRadius:20}} source={{ uri: 'https://www.loupiote.com/photos_l/loading-up-on-tricycle-water-buffalo-injured-in-traffic-accident-india-15376423190.jpg' }} />
+
+        <Title style={{textAlign:'center'}}>In case of accidents: </Title>
+        <Paragraph>Place the animal in a cool, well ventilated place or a shaded area.</Paragraph>
                   <Paragraph>Give small amounts of cold water containing glucose or sugar frequently.</Paragraph>
                   <Paragraph>Ice packs should be applied on the head, forehead and all over the body. If you cannot get ice, use cold towel press it on the head and chest of the animal.</Paragraph>
                   <Paragraph>Give cold milk to drink.</Paragraph>
                   <Paragraph>Once first aid has been administered, and the animal is stable, consult a vet.</Paragraph>
-              </Card.Content>
-              <Card.Cover style={styles.img} source={{ uri: 'data:image/jpeg;base64,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' }} />
-          </Card>
+      
+      </Card.Content>
+      <Card.Actions>
+       
+      </Card.Actions>
+    </Card>
 
-          <Card style={styles.card}> 
-              <Card.Content>
-                  <Title>First Degree Burn Injuries: </Title>
-                  <Paragraph>Only superficial and outer layer of skin is involved.</Paragraph>
+    <Card style={styles.card}>
+
+    {/* <Card.Title title="Card Title" subtitle="Card Subtitle"  /> */}
+      <Card.Content>
+      <Card.Cover  style={{...styles.img,borderRadius:20}} source={{ uri: 'https://rspcasa.b-cdn.net/wp-content/uploads/2020/05/SKETCHERS-AID-151640-2-3-20-8-PHOTO-BARB-SEIDEL-1-of-1.jpg' }} />
+
+        <Title style={{textAlign:'center'}}>First Degree Burn Injuries: </Title>
+        
+        <Paragraph>Only superficial and outer layer of skin is involved.</Paragraph>
                   <Paragraph>It is a mild type of injury and recovers within few days.</Paragraph>
-              </Card.Content>
-              <Card.Cover style={styles.img} source={{ uri: 'https://rspcasa.b-cdn.net/wp-content/uploads/2020/05/SKETCHERS-AID-151640-2-3-20-8-PHOTO-BARB-SEIDEL-1-of-1.jpg' }} />
-          </Card>
+      </Card.Content>
+      <Card.Actions>
+       
+      </Card.Actions>
+    </Card>
+
     </View>
   </ScrollView>
   )
@@ -46,15 +63,21 @@ const VetScreen = () => {
 
 export default VetScreen
 
+
+
 const styles = StyleSheet.create({
+     
   card:{
-    borderColor:'red',
+    
+    borderColor:'purple',
     borderWidth:2,
     padding:3,
     margin:20,
-     
+    borderRadius:20,
   },
   img:{
       margin:20,
-  } 
+    }
+
+
 })

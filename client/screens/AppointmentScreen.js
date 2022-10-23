@@ -29,9 +29,18 @@ const AppointmentScreen = ({ navigation, route }) => {
 export default AppointmentScreen
 
 const styles = StyleSheet.create({
+
   container: {
     flex: 1,
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
+
+    button:{
+        alignItems: 'center',
+        justifyContent: 'center',
+        minHeight: 45,
+        borderRadius: 5,
+        marginTop: 20,
+    }
 })
-// AKNA A 
+

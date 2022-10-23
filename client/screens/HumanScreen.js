@@ -93,12 +93,13 @@ const styles = StyleSheet.create({
 
   card: {
 
-    borderColor: 'red',
+    borderColor: 'purple',
     borderWidth: 2,
     padding: 3,
     margin: 20,
-
+    borderRadius: 20,
   },
+
   img: {
     margin: 20,
   },
@@ -107,3 +108,4 @@ const styles = StyleSheet.create({
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
 })
+

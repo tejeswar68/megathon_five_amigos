@@ -12,8 +12,9 @@ const styles = StyleSheet.create({
     inputField: {
         borderRadius: 5,
         padding: 12,
-        backgroundColor: '#f7fcfc',
-        color: 'white',
+        backgroundColor: 'white',
+        border:'2px solid black',
+        color: 'black',
         marginBottom: 10,
     },
     wrapper: {
@@ -21,7 +22,7 @@ const styles = StyleSheet.create({
         padding: 6,
     },
     button: isValid => ({
-        backgroundColor: isValid ? '#0096F6' : '#9ACAF7',
+        backgroundColor: isValid ? 'dark purple' : 'purple',
         alignItems: 'center',
         justifyContent: 'center',
         minHeight: 45,
@@ -46,7 +47,8 @@ const styles = StyleSheet.create({
     },
     toggleButton: isSelected => ({
         marginLeft: 30,
-        backgroundColor: isSelected ? 'orange' : '#dfe8e7',
+        color:'white',
+        backgroundColor: isSelected ? 'purple' : 'grey',
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius: 5,
@@ -93,7 +95,7 @@ const SignupForm = ({ navigation }) => {
                 {({ handleChange, handleBlur, handleSubmit, values, isValid }) => (
                     <>
                         <View style={[styles.inputField, {
-                            borderColor: 1 > values.username.length || values.username.length > 2 ? '#ccfcfc' : 'red',
+                            borderColor: 1 > values.username.length || values.username.length > 2 ? 'black' : 'red',
                             borderWidth: 1,
                         }]}>
                             <TextInput
@@ -101,6 +103,7 @@ const SignupForm = ({ navigation }) => {
                                 placeholder='Username'
                                 autoCapitalize='none'
                                 autoFocus={true}
+                                style={{ color: 'black' }}
                                 textContentType='username'
                                 onChangeText={handleChange('username')}
                                 onBlur={handleBlur('username')}
@@ -108,13 +111,14 @@ const SignupForm = ({ navigation }) => {
                             />
                         </View>
                         <View style={[styles.inputField, {
-                            borderColor: values.email.length < 1 || Validator.validate(values.email) ? '#ccfcfc' : 'red',
+                            borderColor: values.email.length < 1 || Validator.validate(values.email) ? 'black' : 'red',
                             borderWidth: 1,
                         }]}>
                             <TextInput
                                 placeholderTextColor='#d1d1d1'
                                 placeholder='Email'
                                 autoCapitalize='none'
+                                style={{ color: 'black' }}
                                 keyboardType='email-address'
                                 textContentType='emailAddress'
                                 onChangeText={handleChange('email')}
@@ -123,7 +127,7 @@ const SignupForm = ({ navigation }) => {
                             />
                         </View>
                         <View style={[styles.inputField, {
-                            borderColor: 1 > values.password.length || values.password.length >= 6 ? '#ccfcfc' : 'red',
+                            borderColor: 1 > values.password.length || values.password.length >= 6 ? 'black' : 'red',
                             borderWidth: 1,
                         }]}>
                             <TextInput
@@ -131,6 +135,7 @@ const SignupForm = ({ navigation }) => {
                                 placeholder='Password'
                                 autoCapitalize='none'
                                 autoCorrect={false}
+                                style={{ color: 'black' }}
                                 secureTextEntry={true}
                                 textContentType='password'
                                 onChangeText={handleChange('password')}
@@ -139,7 +144,7 @@ const SignupForm = ({ navigation }) => {
                             />
                         </View>
                         <View style={[styles.inputField, {
-                            borderColor: 1 > values.phone.length || values.phone.length >= 6 ? '#ccfcfc' : 'red',
+                            borderColor: 1 > values.phone.length || values.phone.length >= 6 ? 'black' : 'red',
                             borderWidth: 1,
                         }]}>
                             <TextInput
@@ -147,6 +152,7 @@ const SignupForm = ({ navigation }) => {
                                 placeholder='Phone Number'
                                 autoCapitalize='none'
                                 keyboardType='phone-pad'
+                                style={{ color: 'black' }}
                                 autoCorrect={false}
                                 textContentType='number'
                                 onChangeText={handleChange('phone')}
@@ -170,7 +176,7 @@ const SignupForm = ({ navigation }) => {
                         <View style={styles.loginContainer}>
                             <Text>Already have an account?</Text>
                             <TouchableOpacity onPressOut={() => { navigation.push('LoginScreen') }}>
-                                <Text style={{ color: '#6BB0F5' }}>  Log In</Text>
+                                <Text style={{ color: 'purple' }}>  Log In</Text>
                             </TouchableOpacity>
                         </View>
                     </>
@@ -180,4 +186,4 @@ const SignupForm = ({ navigation }) => {
     )
 }
 
-export default SignupForm
+export default SignupForm

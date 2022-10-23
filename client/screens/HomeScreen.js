@@ -26,7 +26,6 @@ const HomeScreen = ({ navigation }) => {
 
   return (
     <>
-
       <View style={styles.container}>
         <View style={styles.bigbox}>
           <Image
@@ -47,7 +46,7 @@ const HomeScreen = ({ navigation }) => {
           </View>
         </View>
         <View style={styles.smallbox}>
-          <View style={{ ...styles.inner, backgroundColor: '#645CAA' }}>
+          <View style={{ ...styles.inner, backgroundColor: '#b4a6ca' }}>
             <FontAwesome5 name={'paw'} size={50} color="white" style={{ marginBottom: 10 }} />
             <Text style={{ color: 'white', fontSize: 20 }}>VETERNARY</Text>
 
