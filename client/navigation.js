@@ -11,12 +11,21 @@ import AppointmentScreen from './screens/AppointmentScreen'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 import { View } from 'react-native'
+import { auth } from './firebase'
+import { signOut } from 'firebase/auth';
 
 const Stack = createStackNavigator();
 
 const screenOptions = {
     headerShown: true,
 }
+const handleSignOut = async () => {
+    await signOut(auth).then(() => {
+      console.log("Signed Out")
+    }).catch((error) => {
+      console.log(error.message)
+    });
+  }
 
 export const SignedInStack = () => (
     <NavigationContainer>
@@ -26,8 +35,8 @@ export const SignedInStack = () => (
 
                 headerRight:()=>(
                     <View>
-                          <TouchableOpacity onPressOut={() => {navigation.push('profileScreen')}}>
-                    <FontAwesome5 name={'user'} size={30} color="black"  style={{marginTop:10}}/>
+                          <TouchableOpacity onPressOut={handleSignOut}>
+                    <FontAwesome5 name={'power-off'} size={30} color="black"  style={{marginTop:10,marginRight:15}}/>
                     </TouchableOpacity>
                    
                     </View>

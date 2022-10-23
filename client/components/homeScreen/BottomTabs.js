@@ -3,17 +3,17 @@ import React, { useState } from 'react'
 
 
 
-const BottomTabs = () => {
-    const [activeTab, setActiveTab] = useState('Home')
+const BottomTabs = ({navigation}) => {
+    const [activeTab, setActiveTab] = useState('HomeScreen')
 
     const icons = [
         {
-            name: 'Home',
+            name: 'HomeScreen',
             active: "https://img.icons8.com/fluency-systems-filled/144/ffffff/home.png",
             inactive: 'https://img.icons8.com/fluency-systems-regular/48/ffffff/home.png'
         },
         {
-            name: 'Search',
+            name: 'VetScreen',
             active: "https://img.icons8.com/fluency-systems-filled/144/ffffff/search.png",
             inactive: 'https://img.icons8.com/fluency-systems-regular/48/ffffff/search--v1.png'
         },
@@ -30,7 +30,7 @@ const BottomTabs = () => {
     ]
 
     const Icon = ({ icon }) => (
-        <TouchableOpacity onPress={() => setActiveTab(icon.name)}>
+        <TouchableOpacity onPress={() => { !activeTab?navigation.push(icon.name):<></>; setActiveTab(icon.name)}}>
             <Image source={{ uri: activeTab === icon.name ? icon.active : icon.inactive }} style={[styles.icon, icon.name === 'Profile' ? styles.profilePic(activeTab) : null]} />
         </TouchableOpacity>
     )

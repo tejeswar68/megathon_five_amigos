@@ -10,21 +10,11 @@ import BottomTabs from '../components/homeScreen/BottomTabs';
 
 const HomeScreen = ({ navigation }) => {
 
-  const handleSignOut = async () => {
-    await signOut(auth).then(() => {
-      console.log("Signed Out")
-    }).catch((error) => {
-      console.log(error.message)
-    });
-  }
+  
 
   return (
     <>
       <View>
-        <TouchableOpacity onPressOut={handleSignOut}>
-          <Text>SignOut</Text>
-        </TouchableOpacity>
-        
       </View>
       <View style={styles.container}>
         <View style={styles.bigbox}>
@@ -77,7 +67,7 @@ const HomeScreen = ({ navigation }) => {
             </TouchableOpacity>
           </View>
         </View>
-        <BottomTabs />
+        <BottomTabs navigation={navigation} />
         <StatusBar style="auto" />
       </View>
 
