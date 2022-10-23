@@ -33,7 +33,7 @@ const HomeScreen = ({ navigation }) => {
             source={require('../assets/healthmate.jpg')}
           />
           <View style={{ ...styles.inner, backgroundColor: 'skyblue' }}>
-            <Text style={{ color: 'white', fontSize: 30 }}>HEALTHMATE</Text>
+            <Text style={{ color: 'white', fontSize: 30 }}>Healthmate</Text>
           </View>
 
           <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 25 }}>

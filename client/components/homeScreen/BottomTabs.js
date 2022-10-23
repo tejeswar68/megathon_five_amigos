@@ -11,6 +11,7 @@ const BottomTabs = ({ currentUser, navigation }) => {
     useEffect(() => {
         setActiveTab(route.name);
     })
+  
 
     const icons = [
         {
@@ -25,9 +26,9 @@ const BottomTabs = ({ currentUser, navigation }) => {
 
         },
         {
-            name: 'SosScreen',
-            active: "https://as2.ftcdn.net/v2/jpg/02/75/63/71/1000_F_275637194_3QdpxTf9d2HuezQHmoLJPajDoXPf9DX3.jpg",
-            inactive: 'https://as2.ftcdn.net/v2/jpg/02/75/63/71/1000_F_275637194_3QdpxTf9d2HuezQHmoLJPajDoXPf9DX3.jpg'
+            name : 'SosScreen',
+            active: "https://t4.ftcdn.net/jpg/02/75/63/71/240_F_275637194_3QdpxTf9d2HuezQHmoLJPajDoXPf9DX3.jpg",
+            inactive: 'https://t4.ftcdn.net/jpg/02/75/63/71/240_F_275637194_3QdpxTf9d2HuezQHmoLJPajDoXPf9DX3.jpg'
         },
         {
             name: 'MapScreen',

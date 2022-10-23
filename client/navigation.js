@@ -48,11 +48,12 @@ export const SignedInStack = () => (
             })}
         >
             <Stack.Screen name='HomeScreen' options={{
-                title: "HEALTH-MATE",
+                title: "Healthmate+",
                 headerBackTitle: "Back to login",
                 headerTitleStyle:{
                     color:"black",
                     fontSize: 20,
+                    fontWeight:'bold'
                 },
                 headerTitleAlign: "left",
 
