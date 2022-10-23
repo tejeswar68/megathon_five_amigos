@@ -21,7 +21,6 @@ const HomeScreen = ({ navigation }) => {
   return (
     <>
       <View>
-        <Text>HomeScreen</Text>
         <TouchableOpacity onPressOut={handleSignOut}>
           <Text>SignOut</Text>
         </TouchableOpacity>
@@ -62,9 +61,21 @@ const HomeScreen = ({ navigation }) => {
             </TouchableOpacity>
           </View>
 
+
+        </View>
+
+
+
+        <View style={{ ...styles.bigbox, height: '20%', margin: 2 }}>
+          <View style={{ ...styles.inner, backgroundColor: 'red' }}>
+            <FontAwesome5 name={'stethoscope'} size={30} color="white" style={{ marginTop: 10 }} />
+            <Text style={{ color: 'white', fontSize: 30 }}>BOOK AN APPOINTMENT</Text>
+            <TouchableOpacity onPressOut={() => { navigation.push('AppointmentScreen') }}>
+              <FontAwesome5 name={'arrow-right'} size={30} color="white" style={{ marginTop: 10 }} />
+            </TouchableOpacity>
+          </View>
         </View>
         <BottomTabs />
-
         <StatusBar style="auto" />
       </View>
 
