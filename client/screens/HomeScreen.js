@@ -3,6 +3,7 @@ import React from 'react'
 import { auth } from '../firebase'
 import { signOut } from 'firebase/auth';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
+import BottomTabs from '../components/homeScreen/BottomTabs';
 
 
 
@@ -43,29 +44,30 @@ const HomeScreen = ({ navigation }) => {
         </View>
         <View style={styles.smallbox}>
           <View style={{ ...styles.inner, backgroundColor: 'orange' }}>
-          <FontAwesome5 name={'paw'} size={50} color="white"  style={{marginBottom:10}}/>
+            <FontAwesome5 name={'paw'} size={50} color="white" style={{ marginBottom: 10 }} />
             <Text style={{ color: 'white', fontSize: 20 }}>VETERNARY</Text>
 
             <TouchableOpacity onPressOut={() => { navigation.push('VetScreen') }}>
-            <FontAwesome5 name={'arrow-right'} size={30} color="white"  style={{marginTop:10}}/>
+              <FontAwesome5 name={'arrow-right'} size={30} color="white" style={{ marginTop: 10 }} />
             </TouchableOpacity>
           </View>
 
         </View>
         <View style={styles.smallbox}>
           <View style={{ ...styles.inner, backgroundColor: 'lightgreen' }}>
-          <FontAwesome5 name={'user'} size={50} color="white"  style={{marginBottom:10}}/>
+            <FontAwesome5 name={'user'} size={50} color="white" style={{ marginBottom: 10 }} />
             <Text style={{ color: 'white', fontSize: 20 }}>HUMAN</Text>
             <TouchableOpacity onPressOut={() => { navigation.push('HumanScreen') }}>
-            <FontAwesome5 name={'arrow-right'} size={30} color="white"  style={{marginTop:10}}/>
+              <FontAwesome5 name={'arrow-right'} size={30} color="white" style={{ marginTop: 10 }} />
             </TouchableOpacity>
           </View>
 
         </View>
+        <BottomTabs />
 
         <StatusBar style="auto" />
       </View>
-    
+
     </>
   )
 }
