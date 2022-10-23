@@ -100,7 +100,7 @@ export const SignedOutStack = () => (
             initialRouteName='LoginScreen'
             screenOptions={screenOptions}
         >
-            <Stack.Screen name='LoginScreen' component={LoginScreen} />
+            <Stack.Screen name='Login' component={LoginScreen}  />
             <Stack.Screen name='SignupScreen' component={SignupScreen} />
         </Stack.Navigator>
     </NavigationContainer>

@@ -4,7 +4,7 @@ import LoginForm from '../components/loginScreen/LoginForm'
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: "black",
+        backgroundColor: "white",
         flex: 1,
         paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
         paddingTop: 50,
