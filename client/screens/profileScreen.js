@@ -1,24 +1,32 @@
-import React from 'react';
+import { doc, onSnapshot } from 'firebase/firestore';
+import React, { useEffect, useState } from 'react';
 import {
   StyleSheet,
   Text,
   View,
   Image,
 } from 'react-native';
+import { auth, db } from '../firebase';
 
 const ProfileScreen = () => {
-
+  const [currentUser, setCurrentUser] = useState({});
+  useEffect(() => {
+    onSnapshot(doc(db, "users", auth.currentUser.email), (doc) => {
+      setCurrentUser(doc.data());
+    });
+  }, [])
+  console.log(currentUser);
   return (
     <View style={styles.container}>
       <View style={styles.header}>
         <View style={styles.headerContent}>
           <Image style={styles.avatar}
-            source={{ uri: 'https://bootdey.com/img/Content/avatar/avatar6.png' }} />
+            source={{ uri: currentUser.profile_picture }} />
 
-          <Text style={styles.name}>Rajesh T</Text>
-          <Text style={styles.userInfo}>rajesh@gmail.com </Text>
-          <Text style={styles.userInfo}>Gachibowli </Text>
-          <Text style={styles.userInfo}>9704401708</Text>
+          <Text style={styles.name}>{currentUser.username}</Text>
+          {currentUser.isDoctor && <Text style={styles.userInfo}>Doctor</Text>}
+          <Text style={styles.userInfo}>{currentUser.email}</Text>
+          <Text style={styles.userInfo}>{currentUser.phone}</Text>
 
         </View>
       </View>
