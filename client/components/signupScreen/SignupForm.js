@@ -56,15 +56,12 @@ const styles = StyleSheet.create({
 })
 
 const SignupForm = ({ navigation }) => {
-    const phoneRegex = RegExp(
-        /(\+91\ )[6-9]{1}[0-9 ]{4}[0-9 ]{4}[0-9]{3}/,
-    );
 
     const SignupFormSchema = Yup.object().shape({
         username: Yup.string().required().min(2, 'A username is required'),
         email: Yup.string().email().required('An email is required'),
         password: Yup.string().required().min(6, 'Your password has to be at least 6 characters'),
-        phone: Yup.string().matches(phoneRegex, "Invalid phone").required("Phone is required")
+        phone: Yup.string().required("Phone is required")
     })
     const onSignup = async (email, password, username, phone) => {
         await createUserWithEmailAndPassword(auth, email, password).then((userCredential) => {
