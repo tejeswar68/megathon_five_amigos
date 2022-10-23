@@ -1,7 +1,5 @@
 import { StyleSheet, Text, TouchableOpacity, View, StatusBar ,Image} from 'react-native'
 import React from 'react'
-import { auth } from '../firebase'
-import { signOut } from 'firebase/auth';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 import BottomTabs from '../components/homeScreen/BottomTabs';
 
@@ -26,15 +24,15 @@ const HomeScreen = ({ navigation }) => {
             <Text style={{ color: 'white', fontSize: 30 }}>HEALTHMATE</Text>
           </View>
           <View style={{ flexDirection: 'row', alignItems: 'center',marginTop:25  }}>
-            <View style={{ flex: 1, height: 1, backgroundColor: 'black',}} />
+            <View style={{ flex: 1, height: 1, backgroundColor: 'violet',}} />
             <View>
-              <Text style={{ width: 200, padding: 5, textAlign: 'center', fontSize: 20 }}>FIRST-AID INFO</Text>
+              <Text style={{ width: 200, padding: 5, textAlign: 'center', fontSize: 25,color:'purple' }}>FIRST-AID INFO</Text>
             </View>
-            <View style={{ flex: 1, height: 1, backgroundColor: 'black' }} />
+            <View style={{ flex: 1, height: 1, backgroundColor: 'violet' }} />
           </View>
         </View>
         <View style={styles.smallbox}>
-          <View style={{ ...styles.inner, backgroundColor: 'orange' }}>
+          <View style={{ ...styles.inner, backgroundColor: '#645CAA' }}>
             <FontAwesome5 name={'paw'} size={50} color="white" style={{ marginBottom: 10 }} />
             <Text style={{ color: 'white', fontSize: 20 }}>VETERNARY</Text>
 
@@ -45,7 +43,7 @@ const HomeScreen = ({ navigation }) => {
 
         </View>
         <View style={styles.smallbox}>
-          <View style={{ ...styles.inner, backgroundColor: 'lightgreen' }}>
+          <View style={{ ...styles.inner, backgroundColor: '#A084CA' }}>
             <FontAwesome5 name={'user'} size={50} color="white" style={{ marginBottom: 10 }} />
             <Text style={{ color: 'white', fontSize: 20 }}>HUMAN</Text>
             <TouchableOpacity onPressOut={() => { navigation.push('HumanScreen') }}>
@@ -59,7 +57,7 @@ const HomeScreen = ({ navigation }) => {
 
 
         <View style={{ ...styles.bigbox, height: '20%', margin: 2 }}>
-          <View style={{ ...styles.inner, backgroundColor: 'red' }}>
+          <View style={{ ...styles.inner, backgroundColor: 'purple' }}>
             <FontAwesome5 name={'stethoscope'} size={30} color="white" style={{ marginTop: 10 }} />
             <Text style={{ color: 'white', fontSize: 30 }}>BOOK AN APPOINTMENT</Text>
             <TouchableOpacity onPressOut={() => { navigation.push('AppointmentScreen') }}>

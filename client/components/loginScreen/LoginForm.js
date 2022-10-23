@@ -16,11 +16,10 @@ const styles = StyleSheet.create({
         marginBottom: 10,
     },
     wrapper: {
-        marginTop: 70,
         padding: 6,
     },
     button: isValid => ({
-        backgroundColor: isValid ? 'violet' : 'purple',
+        backgroundColor: isValid ? 'purple' : 'violet',
         alignItems: 'center',
         justifyContent: 'center',
         minHeight: 45,
