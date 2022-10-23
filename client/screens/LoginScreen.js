@@ -4,7 +4,7 @@ import LoginForm from '../components/loginScreen/LoginForm'
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: "black",
+        backgroundColor: "white",
         flex: 1,
         paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
         paddingTop: 50,
@@ -20,6 +20,7 @@ const styles = StyleSheet.create({
 const LoginScreen = ({ navigation }) => {
     return (
         <View style={styles.container}>
+            <Image source={require('../assets/loginpage.png')} style={{justifyContent:'center',alignItems:'center',marginLeft:50,marginTop:35}} />
             <View style={styles.logoContainer}>
                 {/* <Image source={logo} style={{ height: 80, width: 80 }} /> */}
             </View>

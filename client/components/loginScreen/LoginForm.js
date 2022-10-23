@@ -10,16 +10,16 @@ const styles = StyleSheet.create({
     inputField: {
         borderRadius: 5,
         padding: 12,
-        backgroundColor: '#211f1f',
-        color: 'white',
+        backgroundColor: 'white',
+        border:'purple',
+        color: 'black',
         marginBottom: 10,
     },
     wrapper: {
-        marginTop: 70,
         padding: 6,
     },
     button: isValid => ({
-        backgroundColor: isValid ? '#0096F6' : '#9ACAF7',
+        backgroundColor: isValid ? 'purple' : 'violet',
         alignItems: 'center',
         justifyContent: 'center',
         minHeight: 45,
@@ -77,7 +77,7 @@ const LoginForm = ({ navigation }) => {
                                 autoCapitalize='none'
                                 keyboardType='email-address'
                                 textContentType='emailAddress'
-                                style={{ color: 'white' }}
+                                style={{ color: 'black' }}
                                 onChangeText={handleChange('email')}
                                 onBlur={handleBlur('email')}
                                 value={values.email}
@@ -94,14 +94,14 @@ const LoginForm = ({ navigation }) => {
                                 autoCorrect={false}
                                 secureTextEntry={true}
                                 textContentType='password'
-                                style={{ color: 'white' }}
+                                style={{ color: 'black' }}
                                 onChangeText={handleChange('password')}
                                 onBlur={handleBlur('password')}
                                 value={values.password}
                             />
                         </View>
                         <TouchableOpacity style={{ alignItems: 'flex-end', marginBottom: 25 }}>
-                            <Text style={{ color: '#6BB0F5' }}>Forgot Password?</Text>
+                            <Text style={{ color: 'purple' }}>Forgot Password?</Text>
                         </TouchableOpacity>
 
                         <TouchableOpacity style={styles.button(isValid)} onPressOut={handleSubmit}>
@@ -109,9 +109,9 @@ const LoginForm = ({ navigation }) => {
                         </TouchableOpacity>
 
                         <View style={styles.signupContainer}>
-                            <Text style={{ color: '#fff' }}>Don't have an account?</Text>
+                            <Text>Don't have an account?</Text>
                             <TouchableOpacity onPressOut={() => { navigation.push('SignupScreen') }}>
-                                <Text style={{ color: '#6BB0F5' }}>  Sign Up</Text>
+                                <Text style={{ color: 'purple'}}>  Sign Up</Text>
                             </TouchableOpacity>
                         </View>
                     </>

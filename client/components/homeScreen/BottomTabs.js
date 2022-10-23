@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 
 
 const BottomTabs = ({ currentUser, navigation }) => {
+
     const [activeTab, setActiveTab] = useState('HomeScreen')
 
     const icons = [
@@ -16,6 +17,7 @@ const BottomTabs = ({ currentUser, navigation }) => {
             name: 'Search',
             active: "https://img.icons8.com/fluency-systems-filled/144/8F00FF/search.png",
             inactive: 'https://img.icons8.com/fluency-systems-regular/48/8F00FF/search--v1.png'
+
         },
         {
             name: 'sosScreen',
@@ -35,6 +37,7 @@ const BottomTabs = ({ currentUser, navigation }) => {
     ]
 
     const Icon = ({ icon }) => (
+
         <TouchableOpacity onPress={() => { if (activeTab !== icon.name) { setActiveTab(icon.name); navigation.push(icon.name); } }}>
             <Image source={{ uri: activeTab === icon.name ? icon.active : icon.inactive }} style={[styles.icon, icon.name === 'profileScreen' ? styles.profilePic(activeTab) : null]} />
         </TouchableOpacity>
