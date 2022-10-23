@@ -68,6 +68,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#778899",
     height: 500,
     alignItems: 'center',
+
   },
   item: {
     flexDirection: 'row',

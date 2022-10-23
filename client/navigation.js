@@ -10,6 +10,7 @@ import ProfileScreen from './screens/profileScreen'
 import AppointmentScreen from './screens/AppointmentScreen'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
+import { View } from 'react-native'
 
 const Stack = createStackNavigator();
 
@@ -21,7 +22,19 @@ export const SignedInStack = () => (
     <NavigationContainer>
         <Stack.Navigator
             initialRouteName='HomeScreen'
-            screenOptions={screenOptions}
+            screenOptions={({navigation})=>({
+
+                headerRight:()=>(
+                    <View>
+                          <TouchableOpacity onPressOut={() => {navigation.push('profileScreen')}}>
+                    <FontAwesome5 name={'user'} size={30} color="black"  style={{marginTop:10}}/>
+                    </TouchableOpacity>
+                   
+                    </View>
+                  
+                    
+                   )
+            })}
         >
             <Stack.Screen name='HomeScreen' options={{
                 title: "HEALTH-MATE",
@@ -31,11 +44,7 @@ export const SignedInStack = () => (
                     fontSize: 20,
                 },
                 headerTitleAlign: "left",
-               headerRight:()=>(
-                <TouchableOpacity onPressOut={() => {navigation.push('profileScreen')}}>
-                <FontAwesome5 name={'user'} size={30} color="black"  style={{marginTop:10}}/>
-                </TouchableOpacity>
-               )
+
             }} component={HomeScreen} />
             <Stack.Screen name='HumanScreen' options={{
                 title: "HumanScreen",

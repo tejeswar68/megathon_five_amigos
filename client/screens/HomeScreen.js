@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TouchableOpacity, View, StatusBar } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity, View, StatusBar ,Image} from 'react-native'
 import React from 'react'
 import { auth } from '../firebase'
 import { signOut } from 'firebase/auth';
@@ -24,17 +24,19 @@ const HomeScreen = ({ navigation }) => {
         <TouchableOpacity onPressOut={handleSignOut}>
           <Text>SignOut</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPressOut={() => { navigation.push('profileScreen') }}>
-          <Text>Profile</Text>
-        </TouchableOpacity>
+        
       </View>
       <View style={styles.container}>
         <View style={styles.bigbox}>
+        <Image
+        style={styles.img}
+        source={require('../assets/healthmate.jpg')}
+      />
           <View style={{ ...styles.inner, backgroundColor: 'skyblue' }}>
             <Text style={{ color: 'white', fontSize: 30 }}>HEALTHMATE</Text>
           </View>
-          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-            <View style={{ flex: 1, height: 1, backgroundColor: 'black' }} />
+          <View style={{ flexDirection: 'row', alignItems: 'center',marginTop:25  }}>
+            <View style={{ flex: 1, height: 1, backgroundColor: 'black',}} />
             <View>
               <Text style={{ width: 200, padding: 5, textAlign: 'center', fontSize: 20 }}>FIRST-AID INFO</Text>
             </View>
@@ -111,6 +113,7 @@ const styles = StyleSheet.create({
     width: '50%',
     height: '25%',
     padding: 5,
+    marginTop:50
 
   },
 
@@ -123,4 +126,9 @@ const styles = StyleSheet.create({
 
   }
   ,
+  img:
+  {
+    width:'100%',
+    height:'100%'
+  }
 })
