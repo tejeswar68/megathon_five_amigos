@@ -3,35 +3,40 @@ import React, { useState } from 'react'
 
 
 
-const BottomTabs = () => {
-    const [activeTab, setActiveTab] = useState('Home')
+const BottomTabs = ({ currentUser, navigation }) => {
+    const [activeTab, setActiveTab] = useState('HomeScreen')
 
     const icons = [
         {
-            name: 'Home',
-            active: "https://img.icons8.com/fluency-systems-filled/144/ffffff/home.png",
-            inactive: 'https://img.icons8.com/fluency-systems-regular/48/ffffff/home.png'
+            name: 'HomeScreen',
+            active: "https://img.icons8.com/fluency-systems-filled/144/8F00FF/home.png",
+            inactive: 'https://img.icons8.com/fluency-systems-regular/48/8F00FF/home.png'
         },
         {
             name: 'Search',
-            active: "https://img.icons8.com/fluency-systems-filled/144/ffffff/search.png",
-            inactive: 'https://img.icons8.com/fluency-systems-regular/48/ffffff/search--v1.png'
+            active: "https://img.icons8.com/fluency-systems-filled/144/8F00FF/search.png",
+            inactive: 'https://img.icons8.com/fluency-systems-regular/48/8F00FF/search--v1.png'
         },
         {
-            name: 'Reels',
-            active: "https://img.icons8.com/ios-filled/50/ffffff/instagram-reel.png",
-            inactive: 'https://img.icons8.com/ios/50/ffffff/instagram-reel.png'
+            name: 'sosScreen',
+            active: "https://img.icons8.com/external-tanah-basah-glyph-tanah-basah/48/8F00FF/external-sos-healthcare-tanah-basah-glyph-tanah-basah-2.png",
+            inactive: 'https://img.icons8.com/external-tanah-basah-basic-outline-tanah-basah/24/8F00FF/external-sos-healthcare-tanah-basah-basic-outline-tanah-basah.png'
         },
         {
-            name: 'Shop',
-            active: "https://img.icons8.com/ios-filled/50/ffffff/like--v1.png",
-            inactive: 'https://img.icons8.com/ios/50/ffffff/like--v1.png'
+            name: 'mapScreen',
+            active: "https://img.icons8.com/ios-filled/50/8F00FF/marker.png",
+            inactive: 'https://img.icons8.com/ios/50/8F00FF/marker--v1.png'
+        },
+        {
+            name: 'profileScreen',
+            active: currentUser.profile_picture,
+            inactive: currentUser.profile_picture
         },
     ]
 
     const Icon = ({ icon }) => (
-        <TouchableOpacity onPress={() => setActiveTab(icon.name)}>
-            <Image source={{ uri: activeTab === icon.name ? icon.active : icon.inactive }} style={[styles.icon, icon.name === 'Profile' ? styles.profilePic(activeTab) : null]} />
+        <TouchableOpacity onPress={() => { if (activeTab !== icon.name) { setActiveTab(icon.name); navigation.push(icon.name); } }}>
+            <Image source={{ uri: activeTab === icon.name ? icon.active : icon.inactive }} style={[styles.icon, icon.name === 'profileScreen' ? styles.profilePic(activeTab) : null]} />
         </TouchableOpacity>
     )
     return (
@@ -51,13 +56,15 @@ const styles = StyleSheet.create({
         width: '100%',
         bottom: 0,
         zIndex: 999,
-        backgroundColor: '#000',
     },
     container: {
         flexDirection: 'row',
         justifyContent: "space-around",
         height: 50,
         paddingTop: 10,
+        borderTopWidth: 2,
+        borderTopColor: "#8F00FF",
+        marginLeft:5,
     },
     icon: {
         width: 30,
@@ -65,9 +72,8 @@ const styles = StyleSheet.create({
     },
     profilePic: (activeTab = '') => ({
         borderRadius: 50,
-        borderWidth: activeTab === 'Profile' ? 2 : 0,
-        borderColor: '#fff',
-
+        borderWidth: activeTab === 'profileScreen' ? 2 : 0,
+        borderColor: '#8F00FF',
     })
 })
 

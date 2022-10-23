@@ -1,12 +1,10 @@
-import { StyleSheet, Text, TouchableOpacity, View, StatusBar ,Image} from 'react-native'
-import React from 'react'
-import { auth } from '../firebase'
+import { StyleSheet, Text, TouchableOpacity, View, StatusBar, Image } from 'react-native'
+import React, { useEffect, useState } from 'react'
+import { auth, db } from '../firebase'
 import { signOut } from 'firebase/auth';
+import { collection, doc, onSnapshot, query, where } from 'firebase/firestore'
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 import BottomTabs from '../components/homeScreen/BottomTabs';
-
-
-
 
 const HomeScreen = ({ navigation }) => {
 
@@ -17,6 +15,12 @@ const HomeScreen = ({ navigation }) => {
       console.log(error.message)
     });
   }
+  const [currentUser, setCurrentUser] = useState({});
+  useEffect(() => {
+    onSnapshot(doc(db, "users", auth.currentUser.email), (doc) => {
+      setCurrentUser(doc.data());
+    });
+  }, [])
 
   return (
     <>
@@ -24,19 +28,19 @@ const HomeScreen = ({ navigation }) => {
         <TouchableOpacity onPressOut={handleSignOut}>
           <Text>SignOut</Text>
         </TouchableOpacity>
-        
+
       </View>
       <View style={styles.container}>
         <View style={styles.bigbox}>
-        <Image
-        style={styles.img}
-        source={require('../assets/healthmate.jpg')}
-      />
+          <Image
+            style={styles.img}
+            source={require('../assets/healthmate.jpg')}
+          />
           <View style={{ ...styles.inner, backgroundColor: 'skyblue' }}>
             <Text style={{ color: 'white', fontSize: 30 }}>HEALTHMATE</Text>
           </View>
-          <View style={{ flexDirection: 'row', alignItems: 'center',marginTop:25  }}>
-            <View style={{ flex: 1, height: 1, backgroundColor: 'black',}} />
+          <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 25 }}>
+            <View style={{ flex: 1, height: 1, backgroundColor: 'black', }} />
             <View>
               <Text style={{ width: 200, padding: 5, textAlign: 'center', fontSize: 20 }}>FIRST-AID INFO</Text>
             </View>
@@ -68,7 +72,7 @@ const HomeScreen = ({ navigation }) => {
 
 
 
-        <View style={{ ...styles.bigbox, height: '20%', margin: 2 }}>
+        {!currentUser.isDoctor && <View style={{ ...styles.bigbox, height: '20%', margin: 2 }}>
           <View style={{ ...styles.inner, backgroundColor: 'red' }}>
             <FontAwesome5 name={'stethoscope'} size={30} color="white" style={{ marginTop: 10 }} />
             <Text style={{ color: 'white', fontSize: 30 }}>BOOK AN APPOINTMENT</Text>
@@ -76,8 +80,8 @@ const HomeScreen = ({ navigation }) => {
               <FontAwesome5 name={'arrow-right'} size={30} color="white" style={{ marginTop: 10 }} />
             </TouchableOpacity>
           </View>
-        </View>
-        <BottomTabs />
+        </View>}
+        <BottomTabs currentUser={currentUser} navigation={navigation} />
         <StatusBar style="auto" />
       </View>
 
@@ -113,7 +117,7 @@ const styles = StyleSheet.create({
     width: '50%',
     height: '25%',
     padding: 5,
-    marginTop:50
+    marginTop: 50
 
   },
 
@@ -128,7 +132,7 @@ const styles = StyleSheet.create({
   ,
   img:
   {
-    width:'100%',
-    height:'100%'
+    width: '100%',
+    height: '100%'
   }
 })
