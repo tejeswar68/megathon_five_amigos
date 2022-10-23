@@ -34,9 +34,6 @@ const MapScreen = () => {
 
   return (
     <View style={styles.container}>
-        <Text>search</Text>
-
-
             <MapView style={styles.map}
                 initialRegion={{
                     latitude: 17.449409013408623, // 17.45858317526013

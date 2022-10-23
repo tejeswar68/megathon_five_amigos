@@ -50,7 +50,7 @@ const HomeScreen = ({ navigation }) => {
             <FontAwesome5 name={'paw'} size={50} color="white" style={{ marginBottom: 10 }} />
             <Text style={{ color: 'white', fontSize: 20 }}>VETERNARY</Text>
 
-            <TouchableOpacity onPressOut={() => { navigation.push('MapScreen') }}>
+            <TouchableOpacity onPressOut={() => { navigation.push('VetScreen') }}>
               <FontAwesome5 name={'arrow-right'} size={30} color="white" style={{ marginTop: 10 }} />
             </TouchableOpacity>
           </View>

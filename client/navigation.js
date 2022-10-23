@@ -10,6 +10,7 @@ import ProfileScreen from './screens/profileScreen'
 import AppointmentScreen from './screens/AppointmentScreen'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
+import SosScreen from './screens/SosScreen'
 import MapScreen from './screens/MapScreen'
 import { View } from 'react-native'
 import { auth } from './firebase'
@@ -99,6 +100,14 @@ export const SignedInStack = () => (
                 },
                 headerTitleAlign: "left"
             }} component={MapScreen} />
+            <Stack.Screen name='SosScreen' options={{
+                title: "SOS-Emergency!!",
+                headerTitleStyle:{
+                    color:"black",
+                    fontSize: 20,
+                },
+                headerTitleAlign: "left"
+            }} component={SosScreen} />
         </Stack.Navigator>
     </NavigationContainer>
 )

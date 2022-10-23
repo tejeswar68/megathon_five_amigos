@@ -10,22 +10,23 @@ const FirstAid = () => {
    <Card style={styles.card}>
     {/* <Card.Title title="Card Title" subtitle="Card Subtitle"  /> */}
       <Card.Content>
-        <Title>Snake Bite</Title>
+      <Card.Cover   style={{...styles.img,borderRadius:20}} source={{ uri: 'https://medlineplus.gov/ency/images/ency/fullsize/8928.jpg' }} />
+        <Title style={{textAlign:'center'}}>Snake Bite</Title>
         <Paragraph>Seek medical attention as soon as possible (dial 911 or call local Emergency Medical Services [EMS]).
 Antivenom is the treatment for serious snake envenomation. The sooner antivenom can be started, the sooner irreversible damage from venom can be stopped.
 Driving oneself to the hospital is not advised because people with snakebites can become dizzy or pass out.
 </Paragraph>
       </Card.Content>
-      <Card.Cover   style={styles.img} source={{ uri: 'https://medlineplus.gov/ency/images/ency/fullsize/8928.jpg' }} />
       <Card.Actions>
-        
       </Card.Actions>
     </Card>
 
     <Card style={styles.card}>
     {/* <Card.Title title="Card Title" subtitle="Card Subtitle"  /> */}
       <Card.Content>
-        <Title>Accident</Title>
+      <Card.Cover style={{...styles.img,borderRadius:20}} source={{ uri: 'https://en.gaonconnection.com/wp-content/uploads/2021/02/Auto-Ricshaw.jpg' }} />
+
+        <Title style={{textAlign:'center'}}>Accident</Title>
        
         <Paragraph>Excessive bleeding from head or mouth could be 
             a sign of danger. If you have a first aid box with you,
@@ -35,7 +36,6 @@ Driving oneself to the hospital is not advised because people with snakebites ca
                 Turn him to his side and keep his neck straight.
                  It is not a good idea to pour water in the victim’s mouth,
                   especially when he is unconscious. It may cause to choking.</Paragraph>
-       <Card.Cover style={styles.img} source={{ uri: 'https://en.gaonconnection.com/wp-content/uploads/2021/02/Auto-Ricshaw.jpg' }} />
       
       </Card.Content>
       <Card.Actions>
@@ -44,9 +44,12 @@ Driving oneself to the hospital is not advised because people with snakebites ca
     </Card>
 
     <Card style={styles.card}>
+
     {/* <Card.Title title="Card Title" subtitle="Card Subtitle"  /> */}
       <Card.Content>
-        <Title>Heart Stroke</Title>
+      <Card.Cover  style={{...styles.img,borderRadius:20}} source={{ uri: 'https://post.healthline.com/wp-content/uploads/2022/01/paramedic_giving_cpr_to_woman_having_heart_attack-732x549-thumbnail-732x549.jpg' }} />
+
+        <Title style={{textAlign:'center'}}>Heart Stroke</Title>
         <Paragraph>If you suspect heatstroke, call 911 or your local emergency number.
            Then move the person out of the heat right away. Cool the person by whatever means available. For example:
 Put the person in a cool tub of water or a cool shower.
@@ -57,7 +60,6 @@ Place ice packs or cool wet towels on the neck, armpits and groin.
 Cover the person with cool damp sheets.
 </Paragraph>
       </Card.Content>
-      <Card.Cover  style={styles.img} source={{ uri: 'https://post.healthline.com/wp-content/uploads/2022/01/paramedic_giving_cpr_to_woman_having_heart_attack-732x549-thumbnail-732x549.jpg' }} />
       <Card.Actions>
        
       </Card.Actions>
@@ -66,7 +68,9 @@ Cover the person with cool damp sheets.
     <Card style={styles.card}>
     {/* <Card.Title title="Card Title" subtitle="Card Subtitle"  /> */}
       <Card.Content>
-        <Title>Sun Stroke </Title>
+      <Card.Cover  style={{...styles.img,borderRadius:20}} source={{ uri: 'https://cdn-prod.medicalnewstoday.com/content/images/articles/321/321972/man-in-the-sun-holding-wet-cloth-to-neck.jpg' }} />
+
+        <Title style={{textAlign:'center'}}>Sun Stroke </Title>
         <Paragraph>Put the person in a cool tub of water or a cool shower.
 Spray the person with a garden hose.
 Sponge the person with cool water.
@@ -74,7 +78,6 @@ Fan the person while misting with cool water.
 Place ice packs or cool wet towels on the neck, armpits and groin.
 Cover the person with cool damp sheets.</Paragraph>
       </Card.Content>
-      <Card.Cover  style={styles.img} source={{ uri: 'https://cdn-prod.medicalnewstoday.com/content/images/articles/321/321972/man-in-the-sun-holding-wet-cloth-to-neck.jpg' }} />
       <Card.Actions>
         
       </Card.Actions>
@@ -89,12 +92,12 @@ export default FirstAid
 const styles = StyleSheet.create({
      
     card:{
-
-      borderColor:'red',
+      
+      borderColor:'purple',
       borderWidth:2,
       padding:3,
       margin:20,
-       
+      borderRadius:20,
     },
     img:{
         margin:20,
