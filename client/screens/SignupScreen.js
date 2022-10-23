@@ -11,16 +11,15 @@ const styles = StyleSheet.create({
   },
   logoContainer: {
     alignItems: 'center',
-    marginTop: 60,
+    marginTop: 0,
   }
 })
 
 const SignupScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
+      <Image source={require('../assets/loginpage.png')} style={{justifyContent:'center',alignItems:'center',marginLeft:50,marginTop:35}} />
       <View style={styles.logoContainer}>
-        {/* <Image source={logo} style={{ height: 80, width: 80 }} /> */}
-        <Text>Signup Screen</Text>
       </View>
       <SignupForm navigation={navigation} />
     </View>
