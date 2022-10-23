@@ -59,7 +59,7 @@ export const SignedInStack = () => (
 
             }} component={HomeScreen} />
             <Stack.Screen name='HumanScreen' options={{
-                title: "HumanScreen",
+                title: "Human First-Aid",
                 headerBackTitle: "Back to login",
                 headerTitleStyle:{
                     color:"black",

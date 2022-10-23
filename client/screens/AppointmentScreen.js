@@ -49,10 +49,8 @@ export default function AppointmentScreen() {
           </View>
         )}
 
-        
-        <Text style={styleSheet.text}>Date = {date.toDateString()}</Text>
-
-        <Text style={styleSheet.text}>Time = {time.toLocaleTimeString('en-US')}</Text>
+        <Text style={styleSheet.text}>Your Appointment with Doctor is booked at </Text>
+        <Text >{date.toDateString()} : {time.toLocaleTimeString('en-US')}</Text>
 
         {datePicker && (
           <DateTimePicker
@@ -92,11 +90,12 @@ const styleSheet = StyleSheet.create({
 
   text: {
     fontSize: 25,
-    color: 'red',
+    color: 'black',
     padding: 3,
     marginBottom: 10,
-    textAlign: 'center'
-  },
+    textAlign: 'center',
+    justifyContent:'center'
+      },
 
   // Style for iOS ONLY...
   datePicker: {

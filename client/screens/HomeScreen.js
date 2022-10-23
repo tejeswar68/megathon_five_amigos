@@ -30,7 +30,7 @@ const HomeScreen = ({ navigation }) => {
         <View style={styles.bigbox}>
           <Image
             style={styles.img}
-            source={require('../assets/healthmate.jpg')}
+            source={require('../assets/homepage.jpg')}
           />
           <View style={{ ...styles.inner, backgroundColor: 'skyblue' }}>
             <Text style={{ color: 'white', fontSize: 30 }}>Healthmate</Text>
@@ -130,7 +130,7 @@ const styles = StyleSheet.create({
   ,
   img:
   {
-    width: '100%',
+    width: '120%',
     height: '100%'
   }
 })
