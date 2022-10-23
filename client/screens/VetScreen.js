@@ -6,9 +6,8 @@ const VetScreen = () => {
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
       <View>
-      <Title>Veternary First Aid  for Animals: </Title>
       <Card style={styles.card}> 
-              <Card.Content>
+              <Card.Content style={{color:'white'}}>
                   <Title>Suggested items for a livestock first aid kit:</Title>
                   <Paragraph>Skin Cleanser</Paragraph>
                   <Paragraph>Water Soluble Ointment</Paragraph>
@@ -52,6 +51,8 @@ const styles = StyleSheet.create({
     borderWidth:2,
     padding:3,
     margin:20,
+    backgroundColor:'violet',
+   
      
   },
   img:{

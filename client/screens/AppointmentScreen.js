@@ -26,4 +26,12 @@ const AppointmentScreen = () => {
 
 export default AppointmentScreen
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    button:{
+        alignItems: 'center',
+        justifyContent: 'center',
+        minHeight: 45,
+        borderRadius: 5,
+        marginTop: 20,
+    }
+})
